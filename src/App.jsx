@@ -10,7 +10,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route element={<BaseLayout />}>
-            <Route path="/" element={<Home />} />
+            <Route index element={<Home />} />
             <Route path="/about-us" element={<AboutUs />} />
             <Route path="/products" element={<Products />} />
           </Route>
