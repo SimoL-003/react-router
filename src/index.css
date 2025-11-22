@@ -1,7 +1,25 @@
 @import "tailwindcss";
 
+@layer base {
+  h1 {
+    @apply text-5xl font-bold;
+  }
+
+  h2 {
+    @apply text-slate-600 text-lg mt-2;
+  }
+
+  h3 {
+    @apply text-slate-900 font-medium;
+  }
+}
+
 @layer utilities {
   .container {
     @apply max-w-6xl w-[85%] mx-auto;
+  }
+
+  header .active {
+    color: var(--color-indigo-500) !important;
   }
 }
