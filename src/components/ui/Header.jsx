@@ -6,16 +6,16 @@ import { NavLink } from "react-router-dom";
 export default function Header() {
   const nav = [
     {
+      page: "Home",
       path: "/",
-      page: <Home />,
     },
     {
+      page: "About us",
       path: "/about-us",
-      page: <AboutUs />,
     },
     {
+      page: "Products",
       path: "/products",
-      page: <Products />,
     },
   ];
 
