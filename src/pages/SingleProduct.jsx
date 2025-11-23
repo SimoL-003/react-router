@@ -8,8 +8,6 @@ export default function SingleProduct() {
   const [singleProduct, setSingleProduct] = useState({});
   const [loading, setLoading] = useState(true);
 
-  console.log(loading);
-
   useEffect(() => {
     axios.get(`https://fakestoreapi.com/products/${id}`).then((res) => {
       setSingleProduct(res.data);

@@ -1,11 +1,11 @@
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import ProductsGridLoader from "../components/loaders/ProductsGridLoader";
 
 export default function Products() {
   const [productsList, setProductsList] = useState([]);
-  useState(() => {
+  useEffect(() => {
     axios
       .get("https://fakestoreapi.com/products")
       .then((res) => setProductsList(res.data));
