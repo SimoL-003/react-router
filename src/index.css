@@ -16,7 +16,11 @@
 
 @layer components {
   .button {
-    @apply px-6 py-4 rounded-md transition-all duration-150 font-semibold text-base;
+    @apply inline-block px-6 py-4 rounded-md transition-all duration-150 font-semibold text-base;
+  }
+
+  .button--primary {
+    @apply bg-indigo-600 hover:bg-indigo-700 text-white;
   }
 
   .button--secondary {
