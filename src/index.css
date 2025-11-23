@@ -14,6 +14,16 @@
   }
 }
 
+@layer components {
+  .button {
+    @apply px-6 py-4 rounded-md transition-all duration-150 font-semibold text-base;
+  }
+
+  .button--secondary {
+    @apply bg-white text-slate-700 border-2 border-slate-300 hover:bg-slate-100 hover:text-slate-900 px-3 py-2;
+  }
+}
+
 @layer utilities {
   .container {
     @apply max-w-6xl w-[85%] mx-auto;
