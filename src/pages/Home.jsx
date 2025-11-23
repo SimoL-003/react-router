@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <main>
       {/* HERO SECTION */}
-      <section className="bg-[url(src/assets/hero-bg.jpg)] bg-cover h-[500px] flex items-center bg-blend-multiply bg-black/20 ">
+      <section className="home__hero bg-cover h-[500px] flex items-center bg-blend-multiply bg-black/20">
         <div className="container">
           <hgroup>
             <h1 className="text-white">Shop Online</h1>
