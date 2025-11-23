@@ -1,6 +1,9 @@
 @import "tailwindcss";
 
 @layer base {
+  * {
+    @apply focus-visible:outline-0;
+  }
   h1 {
     @apply text-5xl font-bold;
   }
@@ -20,7 +23,7 @@
   }
 
   .button--primary {
-    @apply bg-indigo-600 hover:bg-indigo-700 text-white;
+    @apply bg-indigo-600 hover:bg-indigo-700 text-white focus-visible:ring-2 focus-visible:ring-indigo-300;
   }
 
   .button--secondary {
