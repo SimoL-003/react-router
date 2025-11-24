@@ -22,8 +22,11 @@ export default function SingleProduct() {
       ) : (
         <div className="container">
           <div>
-            <Link to={"/products"} className="button button--secondary">
-              Return to products
+            <Link
+              to={"/products"}
+              className="button button--secondary text-end"
+            >
+              Return to product list &crarr;
             </Link>
           </div>
           <div className="flex flex-col lg:flex-row items-center">
@@ -44,6 +47,20 @@ export default function SingleProduct() {
                 {singleProduct.description}
               </p>
             </div>
+          </div>
+          <div className="flex justify-between">
+            <Link
+              to={`/products/${singleProduct.id - 1}`}
+              className="button button--secondary"
+            >
+              &larr; Previous product
+            </Link>
+            <Link
+              to={`/products/${singleProduct.id + 1}`}
+              className="button button--secondary"
+            >
+              Next product &rarr;
+            </Link>
           </div>
         </div>
       )}
