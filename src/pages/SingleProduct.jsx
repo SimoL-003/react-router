@@ -7,6 +7,10 @@ export default function SingleProduct() {
   const { id } = useParams();
   const [singleProduct, setSingleProduct] = useState({});
   const [loading, setLoading] = useState(true);
+  const [productsList, setProductsList] = useState([]);
+
+  const firstProduct = true;
+  const lastProduct = true;
 
   useEffect(() => {
     axios.get(`https://fakestoreapi.com/products/${id}`).then((res) => {
@@ -14,6 +18,18 @@ export default function SingleProduct() {
       setLoading(false);
     });
   }, [id]);
+
+  useEffect(() => {
+    axios.get("https://fakestoreapi.com/products").then((res) => {
+      setProductsList(res.data);
+    });
+  }, []);
+
+  const firstId = productsList[0]?.id;
+  const lastId = productsList[productsList.length - 1]?.id;
+
+  const isFirst = singleProduct?.id === firstId;
+  const isLast = singleProduct?.id === lastId;
 
   return (
     <section className="min-h-screen bg-slate-100 py-8">
@@ -50,14 +66,16 @@ export default function SingleProduct() {
           </div>
           <div className="flex justify-between">
             <Link
-              to={`/products/${singleProduct.id - 1}`}
+              to={isFirst ? "" : `/products/${singleProduct.id - 1}`}
               className="button button--secondary"
+              aria-disabled={isFirst}
             >
               &larr; Previous product
             </Link>
             <Link
-              to={`/products/${singleProduct.id + 1}`}
+              to={isLast ? "" : `/products/${singleProduct.id + 1}`}
               className="button button--secondary"
+              aria-disabled={isLast}
             >
               Next product &rarr;
             </Link>

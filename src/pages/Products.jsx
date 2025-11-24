@@ -5,6 +5,7 @@ import ProductsGridLoader from "../components/loaders/ProductsGridLoader";
 
 export default function Products() {
   const [productsList, setProductsList] = useState([]);
+
   useEffect(() => {
     axios
       .get("https://fakestoreapi.com/products")
