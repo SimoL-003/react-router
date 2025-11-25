@@ -22,9 +22,12 @@ export default function Header() {
   return (
     <header className="h-20 bg-white flex items-center justify-center">
       <nav className="flex justify-between items-center w-[95%]">
+        {/* LOGO */}
         <Link to="/" className="text-3xl font-bold text-slate-900">
           Shop Online
         </Link>
+
+        {/* NAVIGATION */}
         <ol className="flex gap-10 items-center">
           {nav.map((cur, index) => (
             <li

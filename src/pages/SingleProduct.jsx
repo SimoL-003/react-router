@@ -37,18 +37,21 @@ export default function SingleProduct() {
         <SingleProductLoader />
       ) : (
         <div className="container">
-          <div>
-            <Link
-              to={"/products"}
-              className="button button--secondary text-end"
-            >
+          {/* RETURN BUTTON */}
+          <div className="text-end">
+            <Link to={"/products"} className="button button--secondary">
               Return to product list &crarr;
             </Link>
           </div>
+
+          {/* PRODUCT DETAILS */}
           <div className="flex flex-col lg:flex-row items-center">
+            {/* Image */}
             <div className="w-2/5 p-8">
               <img src={singleProduct.image} alt={singleProduct.title} />
             </div>
+
+            {/* Texts */}
             <div className="w-3/5 p-16">
               <p className="my-6 text-sm uppercase tracking-wide text-slate-500">
                 {singleProduct.category}
@@ -64,7 +67,10 @@ export default function SingleProduct() {
               </p>
             </div>
           </div>
+
+          {/* NAVIGATION BUTTONS */}
           <div className="flex justify-between">
+            {/* Previous product */}
             <Link
               to={isFirst ? "" : `/products/${singleProduct.id - 1}`}
               className="button button--secondary"
@@ -72,6 +78,8 @@ export default function SingleProduct() {
             >
               &larr; Previous product
             </Link>
+
+            {/* Next product */}
             <Link
               to={isLast ? "" : `/products/${singleProduct.id + 1}`}
               className="button button--secondary"

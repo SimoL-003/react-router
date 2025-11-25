@@ -20,10 +20,12 @@ export default function Products() {
           <h2>Choose our products</h2>
         </hgroup>
 
-        <div className="procucts-container">
+        {/* PRODUCTS CONTAINER */}
+        <div>
           <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-slate-500">
             {productsList.length !== 0 ? (
               productsList.map((product) => (
+                // Product card
                 <li
                   key={product.id}
                   className="rounded-lg bg-white shadow-lg hover:scale-[1.02] hover:shadow-2xl transition-all duration-300"
@@ -46,6 +48,7 @@ export default function Products() {
                 </li>
               ))
             ) : (
+              // Skeleton loaders
               <>
                 <ProductsGridLoader />
                 <ProductsGridLoader />
